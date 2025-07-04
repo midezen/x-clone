@@ -15,13 +15,22 @@ export default function Home() {
         <Link href="/" className="flex items-center pb-3 justify-center">
           Following
         </Link>
-        <Link href="/" className="flex items-center pb-3 justify-center">
+        <Link
+          href="/"
+          className="hidden md:flex items-center pb-3 justify-center"
+        >
           React.js
         </Link>
-        <Link href="/" className="flex items-center pb-3 justify-center">
+        <Link
+          href="/"
+          className="hidden md:flex items-center pb-3 justify-center"
+        >
           JavaScript
         </Link>
-        <Link href="/" className="flex items-center pb-3 justify-center">
+        <Link
+          href="/"
+          className="hidden md:flex items-center pb-3 justify-center"
+        >
           CSS
         </Link>
       </div>
