@@ -1,6 +1,5 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 
 const PopularTags = () => {
   return (
@@ -82,6 +81,9 @@ const PopularTags = () => {
         <h2 className="text-textGrayLight font-bold">JavaScript</h2>
         <span className="text-textGray text-sm">5K posts</span>
       </div>
+      <Link href="/">
+        <span className="text-iconBlue">Show more</span>
+      </Link>
     </div>
   );
 };
