@@ -60,13 +60,13 @@ const LeftBar = () => {
         </nav>
         {/* POST BUTTON */}
         <Link
-          href="/"
+          href="/compose/post"
           className="xxl:hidden bg-white rounded-full w-12 h-12 flex items-center justify-center"
         >
           <HiOutlineSparkles size={24} color="black" />
         </Link>
         <Link
-          href="/"
+          href="/compose/post"
           className="hidden xxl:block bg-white rounded-full font-bold py-2 px-20"
         >
           <span className="text-black">Post</span>
@@ -74,7 +74,7 @@ const LeftBar = () => {
       </div>
 
       {/* USER   */}
-      <div className="flex items-center justify-between">
+      <Link href="/profile/ayo" className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full overflow-hidden relative">
             <Image src="/profile-pic.jpg" alt="profile pic" fill />
@@ -85,7 +85,7 @@ const LeftBar = () => {
           </div>
         </div>
         <div className="hidden xxl:block cursor-pointer font-bold">...</div>
-      </div>
+      </Link>
     </div>
   );
 };

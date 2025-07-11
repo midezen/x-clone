@@ -48,6 +48,7 @@ const Post = () => {
             alt="post image"
             width={600}
             height={600}
+            className="rounded-lg"
           />
           <PostInteractions />
         </div>

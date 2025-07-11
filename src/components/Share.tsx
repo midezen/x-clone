@@ -16,7 +16,7 @@ const Share = () => {
   return (
     <form className="p-4 flex gap-4" action={shareAction}>
       {/* AVATAR */}
-      <div className="relative w-10 h-10 rounded-full overflow-hidden">
+      <div className="relative w-10 h-10 rounded-full overflow-hidden cursor-pointer">
         <Image src="/profile-pic.jpg" alt="avatar" fill />
       </div>
       {/* OTHERS */}
@@ -42,33 +42,44 @@ const Share = () => {
                 alt="image icon"
                 width={20}
                 height={20}
+                className="cursor-pointer"
               />
             </label>
 
-            <Image src="/icons/gif.svg" alt="gif icon" width={20} height={20} />
+            <Image
+              src="/icons/gif.svg"
+              alt="gif icon"
+              width={20}
+              height={20}
+              className="cursor-pointer"
+            />
             <Image
               src="/icons/poll.svg"
               alt="poll icon"
               width={20}
               height={20}
+              className="cursor-pointer"
             />
             <Image
               src="/icons/emoji.svg"
               alt="emoji icon"
               width={20}
               height={20}
+              className="cursor-pointer"
             />
             <Image
               src="/icons/schedule.svg"
               alt="schedule icon"
               width={20}
               height={20}
+              className="cursor-pointer"
             />
             <Image
               src="/icons/location.svg"
               alt="location icon"
               width={20}
               height={20}
+              className="cursor-pointer"
             />
           </div>
           <button className="bg-white text-black font-bold rounded-full py-2 px-4">

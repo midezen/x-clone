@@ -1,3 +1,4 @@
+import Feed from "@/components/Feed";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -54,7 +55,7 @@ const UserPage = () => {
               height={20}
             />
           </div>
-          <button className="py-2 px-4 font-bold bg-white text-black rounded-full">
+          <button className="py-2 px-4 font-bold bg-white text-black rounded-full cursor-pointer">
             Follow
           </button>
         </div>
@@ -100,6 +101,8 @@ const UserPage = () => {
           </div>
         </div>
       </div>
+      {/* FEED */}
+      <Feed />
     </div>
   );
 };
