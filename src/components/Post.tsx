@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import PostInfo from "./PostInfo";
 import PostInteractions from "./PostInteractions";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-const Post = () => {
+const Post = ({ type }: { type?: "status" | "comment" }) => {
+  const router = useRouter();
   return (
     <div className="p-4 border-y-[1px] border-borderGray">
       {/* POST TYPE */}
@@ -21,28 +26,57 @@ const Post = () => {
         <span>Ay Dev reposted</span>
       </div>
       {/* POST CONTENT */}
-      <div className="flex gap-4">
+      <div className={`flex gap-4 ${type === "status" && "flex-col"}`}>
         {/* AVATAR */}
-        <div className="relative w-10 h-10 rounded-full overflow-hidden">
+        <div
+          className={`${
+            type === "status" && "hidden"
+          } relative w-10 h-10 rounded-full overflow-hidden`}
+        >
           <Image src="/profile-pic.jpg" alt="avatar" fill />
         </div>
         {/* CONTENT */}
         <div className="flex-1 flex flex-col gap-2">
-          <div id="top" className="flex items-center justify-between gap-2">
-            <div className="flex gap-2 flex-wrap">
-              <h1 className="text-md font-bold">Ay Dev</h1>
-              <span className="text-textGray">@aydev</span>
-              <span className="text-textGray">1 day ago</span>
-            </div>
+          <div className="w-full flex justify-between">
+            <Link href={"/profile/aydev"} className="flex gap-4">
+              <div
+                className={`${
+                  type !== "status" && "hidden"
+                } relative w-10 h-10 rounded-full overflow-hidden`}
+              >
+                <Image src="/profile-pic.jpg" alt="avatar" fill />
+              </div>
+              <div
+                className={`flex items-center gap-2 flex-wrap ${
+                  type === "status" && "flex-col !gap-0 !items-start"
+                }`}
+              >
+                <h1 className="text-md font-bold">Ay Dev</h1>
+                <span
+                  className={`text-textGray ${type === "status" && "text-sm"}`}
+                >
+                  @aydev
+                </span>
+                {type !== "status" && (
+                  <span className="text-textGray">1 day ago</span>
+                )}
+              </div>
+            </Link>
 
             <PostInfo />
           </div>
           {/* TEXT & IMAGE */}
-          <p>
+          <p
+            className={`${
+              type === "status" && "text-lg !cursor-auto"
+            } cursor-pointer`}
+            onClick={() => router.push("/post/status/234")}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl
             aliquam nunc, eget aliquam massa nisl quis neque.
           </p>
+
           <Image
             src="/post-image.jpg"
             alt="post image"
@@ -50,6 +84,9 @@ const Post = () => {
             height={600}
             className="rounded-lg"
           />
+          {type === "status" && (
+            <span className="text-textGray">10:08pm • July 15, 2025 </span>
+          )}
           <PostInteractions />
         </div>
       </div>
